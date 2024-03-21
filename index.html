@@ -1,0 +1,28 @@
+<link rel="stylesheet" type="text/css" href="style.css">
+<div id="app">
+  <div :class="['bg', bg]">
+    <header>
+      <nav>
+        <ul>
+          <li><a class="link-bio" href="#bio" @click="bg = 'bio'">Bio</a></li>
+          <li><a class="link-projects" href="#projects" @click="bg = 'projects'">Projects</a></li>
+          <li><a class="link-find-me" href="#findme" @click="bg = 'find-me'">Find Me</a></li>
+        </ul>
+      </nav>
+      <div class="transition transition-bio"></div>
+      <div class="transition transition-projects"></div>
+      <div class="transition transition-find-me"></div>
+      <h1>SAYLO</h1>
+    </header>
+    <div class="dots dots1"></div>
+    <div class="dots dots2"></div>
+    <img src="say.jpg" width="300" height="300" />
+    <main>
+      <transition name="slide-fade" mode="out-in">
+        <p key="bio" v-if="bg==='bio'">Hi! I'm Justine Saylo.</p>
+        <p key="projects" v-if="bg==='projects'">This is a projects page.</p>
+        <p key="find-me" v-if="bg==='find-me'"> <a href="#" target="_blank" rel="noopener"></a> .</p>
+      </transition>
+    </main>
+  </div>
+</div>
